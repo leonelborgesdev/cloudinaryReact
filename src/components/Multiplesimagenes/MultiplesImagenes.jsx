@@ -1,14 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dropzone from "react-dropzone";
+import { useDispatch } from "react-redux";
 import { Container } from "reactstrap";
+import { fetchAllProducts } from "../../store/slices/products";
 
 export const MultiplesImagenes = (props) => {
+  const dispatch = useDispatch();
   const [image, setImage] = useState({ array: {} });
   const [loading, setLoading] = useState("");
   const handleDrop = (files) => {
     console.log(files);
   };
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, []);
   return (
     <div>
       <Container>
