@@ -17,15 +17,22 @@ export default productSlice.reducer;
 
 export const fetchCreateProduct = (product) => {
   return async function () {
-    const response = await fetch(`${api}/product`, {
+    const formData = new FormData();
+
+    for (const property in product) {
+      formData.append(property, product[property]);
+    }
+    console.log("formData", formData);
+    const response = await fetch(`${api}/products`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      body: formData,
     });
     if (response) {
-      await response.json();
+      const data = await response.json();
+      console.log(data);
     }
   };
 };
