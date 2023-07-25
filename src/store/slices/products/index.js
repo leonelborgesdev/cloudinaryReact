@@ -21,7 +21,7 @@ export const fetchAllProducts = () => {
     if (response) {
       const data = await response.json();
       console.log(data);
-      //   dispatch(setProducsList(data));
+      dispatch(setProducsList(data));
     }
   };
 };
