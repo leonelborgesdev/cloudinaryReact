@@ -1,0 +1,15 @@
+.container_button_products{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.button_back{
+    border-radius: 20px;
+    background: yellow;
+    border: none;
+}
+.button_save{
+    border-radius: 20px;
+    background: green;
+    border: none;
+}

@@ -6,6 +6,7 @@ import { Container } from "reactstrap";
 import { fetchAllProducts } from "../../store/slices/products";
 import { fetchCreateProduct } from "../../store/slices/product";
 import { useNavigate } from "react-router-dom";
+import "./MultiplesImagenes.css";
 
 export const MultiplesImagenes = (props) => {
   const dispatch = useDispatch();
@@ -65,8 +66,14 @@ export const MultiplesImagenes = (props) => {
             <label>Price:</label>
             <input type="number" name="price" onChange={handleChange} />
           </p>
-          <button onClick={handleSubmid}>Crear</button>
-          <button onClick={() => navigate("/")}>Volver</button>
+          <div className="container_button_products">
+            <button className="button_save" onClick={handleSubmid}>
+              Crear
+            </button>
+            <button className="button_back" onClick={() => navigate("/")}>
+              Volver
+            </button>
+          </div>
         </div>
       </Container>
     </div>
