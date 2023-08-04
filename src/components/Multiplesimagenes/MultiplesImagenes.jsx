@@ -5,9 +5,11 @@ import { useDispatch } from "react-redux";
 import { Container } from "reactstrap";
 import { fetchAllProducts } from "../../store/slices/products";
 import { fetchCreateProduct } from "../../store/slices/product";
+import { useNavigate } from "react-router-dom";
 
 export const MultiplesImagenes = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
@@ -64,6 +66,7 @@ export const MultiplesImagenes = (props) => {
             <input type="number" name="price" onChange={handleChange} />
           </p>
           <button onClick={handleSubmid}>Crear</button>
+          <button onClick={() => navigate("/")}>Volver</button>
         </div>
       </Container>
     </div>

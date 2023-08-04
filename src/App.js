@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product" element={<MultiplesImagenes />} />
-          <Route path="/sale" element={<Sale />} />
+          <Route path="/products" element={<MultiplesImagenes />} />
+          <Route path="/sales" element={<Sale />} />
         </Routes>
       </BrowserRouter>
     </div>
